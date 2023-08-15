@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bd_gestao
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema bd_gestao
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `bd_gestao` DEFAULT CHARACTER SET utf8 ;
+USE `bd_gestao` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`tab_funcionario`
+-- Table `bd_gestao`.`tab_funcionario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tab_funcionario` (
+CREATE TABLE IF NOT EXISTS `bd_gestao`.`tab_funcionario` (
   `cod_funcional` INT NOT NULL,
   `func_nome` VARCHAR(45) NULL,
   `func_cargo` VARCHAR(45) NULL,
@@ -30,9 +30,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`tab_local`
+-- Table `bd_gestao`.`tab_local`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tab_local` (
+CREATE TABLE IF NOT EXISTS `bd_gestao`.`tab_local` (
   `cod_local` INT NOT NULL,
   `desc_local` VARCHAR(30) NULL,
   `id_responsavel` INT NULL,
@@ -40,16 +40,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tab_local` (
   INDEX `fk_tab_local_tab_funcionario_idx` (`id_responsavel` ASC) VISIBLE,
   CONSTRAINT `fk_funcionario`
     FOREIGN KEY (`id_responsavel`)
-    REFERENCES `mydb`.`tab_funcionario` (`cod_funcional`)
+    REFERENCES `bd_gestao`.`tab_funcionario` (`cod_funcional`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`tab_item`
+-- Table `bd_gestao`.`tab_item`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tab_item` (
+CREATE TABLE IF NOT EXISTS `bd_gestao`.`tab_item` (
   `cod_item` INT NOT NULL,
   `desc_item` VARCHAR(30) NULL,
   `valor_entrada` DECIMAL(15,2) NULL,
@@ -61,21 +61,21 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tab_item` (
   INDEX `fk_tab_item_tab_local1_idx` (`id_local_atual` ASC) VISIBLE,
   CONSTRAINT `fk_funcional_cadastro`
     FOREIGN KEY (`id_funcional_cadastro`)
-    REFERENCES `mydb`.`tab_funcionario` (`cod_funcional`)
+    REFERENCES `bd_gestao`.`tab_funcionario` (`cod_funcional`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_local`
     FOREIGN KEY (`id_local_atual`)
-    REFERENCES `mydb`.`tab_local` (`cod_local`)
+    REFERENCES `bd_gestao`.`tab_local` (`cod_local`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`tab_log`
+-- Table `bd_gestao`.`tab_log`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tab_log` (
+CREATE TABLE IF NOT EXISTS `bd_gestao`.`tab_log` (
   `time_movimentacao` TIMESTAMP(6) NOT NULL,
   `id_local_saida` INT NOT NULL,
   `id_local_entrada` INT NOT NULL,
@@ -86,17 +86,17 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tab_log` (
   INDEX `fk_tab_log_tab_item1_idx` (`id_item_movido` ASC) VISIBLE,
   CONSTRAINT `fk_local_saida`
     FOREIGN KEY (`id_local_saida`)
-    REFERENCES `mydb`.`tab_local` (`cod_local`)
+    REFERENCES `bd_gestao`.`tab_local` (`cod_local`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_local_entrada`
     FOREIGN KEY (`id_local_entrada`)
-    REFERENCES `mydb`.`tab_local` (`cod_local`)
+    REFERENCES `bd_gestao`.`tab_local` (`cod_local`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_item_movido`
     FOREIGN KEY (`id_item_movido`)
-    REFERENCES `mydb`.`tab_item` (`cod_item`)
+    REFERENCES `bd_gestao`.`tab_item` (`cod_item`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
