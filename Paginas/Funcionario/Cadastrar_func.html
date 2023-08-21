@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão Funcionário</title>
-    <link rel="stylesheet" href="../Styles/style_func.css">
+    <link rel="stylesheet" href="../Styles/style_func_cad.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
 
 </head>
 <body>
-    <ul>
-        <li><a href="/Paginas/index.html">Início</a></li>
-        <li><a href="/Paginas/Funcionario/Cadastrar_func.html">Cadastrar</a></li>
-        <li><a href="/Paginas/Funcionario/Deletar_func.html">Deletar</a></li>
-        <li><a href="/Paginas/Funcionario/Modificar_func.html">Modificar</a></li>
-
-
-    </ul>
+    <div class="div-ul">
+        <ul>
+            <li><a href="/Paginas/index.html">Início</a></li>
+            <li class="botao-cad"><a href="/Paginas/Funcionario/Cadastrar_func.html">Cadastrar</a></li>
+            <li><a href="/Paginas/Funcionario/Deletar_func.html">Deletar</a></li>
+            <li><a href="/Paginas/Funcionario/Modificar_func.html">Modificar</a></li>
+        </ul>
+    </div>
 
     
     <form id="my-form">
@@ -38,14 +38,14 @@
 
                 <div class="input-wrapper">
                     <label for="event-whatsapp">Telefone<span>(somente números)</span></label>
-                    <input type="text" id="event-whatsapp">
+                    <input type="number" id="event-whatsapp">
                 </div>
             </div>
         </fieldset>
    </form>
 
    <footer>
-    <input class="button" type="submit" form="my-form" value="SALVAR FUNCIONÁRIO">
+    <input class="button" type="submit" form="my-form" value="CADASTRAR FUNCIONÁRIO">
 
             </footer>
 </body>
