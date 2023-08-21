@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão Funcionário</title>
-    <link rel="stylesheet" href="../Styles/style_func_mod.css">
+    <link rel="stylesheet" href="../Styles/Styles Local/style_local_mod.css">
     
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,9 +17,9 @@
     <div class="div-ul">
         <ul>
             <li><a href="/Paginas/index.html">Início</a></li>
-            <li><a href="/Paginas/Funcionario/Cadastrar_func.html">Cadastrar</a></li>
-            <li><a href="/Paginas/Funcionario/Deletar_func.html">Deletar</a></li>
-            <li class="botao-mod"><a href="/Paginas/Funcionario/Modificar_func.html">Modificar</a></li>
+            <li><a href="/Paginas/Local/Cadastrar_local.html">Cadastrar</a></li>
+            <li><a href="/Paginas/Local/Deletar_local.html">Deletar</a></li>
+            <li class="botao-mod"><a href="/Paginas/Local/Modificar_local.html">Modificar</a></li>
         </ul>
     </div>
 
@@ -30,38 +30,31 @@
                 <legend>Modificar Funcionário</legend>
 
                 <div class="input-wrapper">
-                    <label for="event-category">Selecionar Funcionário</label>
+                    <label for="event-category">Selecionar Local</label>
                     <select id="event-category">
                         <option value="" style="display:none;"></option>
-                        <option value="live">JOÃO CARLOS</option>
-                        <option value="podcast">ROBERTA COELHO</option>
-                        <option value="mentorship">ANTONIO MARCOS</option>
-                        <option value="mentorship">ISABELA SILVA</option>
+                        <option value="live">ALMOXARIFADO</option>
+                        <option value="podcast">RECURSOS HUMANOS</option>
+                        <option value="mentorship">DIRETORIA</option>
+                        <option value="mentorship">REFEITÓRIO</option>
                     </select>
                 </div>
 
                 <div class="input-wrapper">
-                    <label for="event-title">Novo - Nome e Sobrenome<span></span></label>
+                    <label for="event-title">Novo - Nome<span></span></label>
                     <input type="text" id="event-title" required minlength="8">
                 </div>
 
                 <div class="input-wrapper">
-                    <label for="event-link">Novo - Cargo na empresa<span></span></label>
+                    <label for="event-link">Novo - Responsável<span></span></label>
                     <input type="text" id="event-link">
                 </div>
-
-                <div class="input-wrapper">
-                    <label for="event-whatsapp">Novo - Telefone<span>(somente números)</span></label>
-                    <input type="number" id="event-whatsapp">
-                </div>
-
-                
             </div>
         </fieldset>
    </form>
 
    <footer>
-    <input class="button" type="submit" form="my-form" value="MODIFICAR FUNCIONÁRIO">
+    <input class="button" type="submit" form="my-form" value="MODIFICAR LOCAL">
 
             </footer>
 </body>

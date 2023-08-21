@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Local</title>
+    <link rel="stylesheet" href="../Styles/Styles Local/style_local_cad.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="div-ul">
+        <ul>
+            <li><a href="/Paginas/index.html">Início</a></li>
+            <li class="botao-cad"><a href="/Paginas/Local/Cadastrar_local.html">Cadastrar</a></li>
+            <li><a href="/Paginas/Local/Deletar_local.html">Deletar</a></li>
+            <li><a href="/Paginas/Local/Modificar_local.html">Modificar</a></li>
+        </ul>
+    </div>
+
+    
+    <form id="my-form">
+        <fieldset>
+            <div class="fieldset-wrapper">
+                <legend>Cadastrar Local</legend>
+
+                <div class="input-wrapper">
+                    <label for="event-title">Nome do Local<span></span></label>
+                    <input type="text" id="event-title" required minlength="8">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="event-link">Nome do Responsável<span></span></label>
+                    <input type="text" id="event-link">
+                </div>
+            </div>
+        </fieldset>
+   </form>
+
+   <footer>
+    <input class="button" type="submit" form="my-form" value="CADASTRAR LOCAL">
+
+            </footer>
+</body>
+</html>

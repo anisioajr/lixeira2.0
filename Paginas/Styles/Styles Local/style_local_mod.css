@@ -12,7 +12,6 @@ body {
 .div-ul {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 form {
@@ -85,6 +84,14 @@ fieldset legend {
   height: 168px;
 }
 
+.input-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-repeat: no-repeat;
+  background-position: right 24px top 50%;
+}
+
 .col-3 {
   display: flex;
   gap: 20px;
@@ -113,15 +120,6 @@ fieldset legend {
   height: 24px;
 
   opacity: 0;
-}
-
-.checkbox-wrapper label::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-
-  border: 1px solid #e6e6f0;
-  border-radius: 8px;
 }
 
 .checkbox-wrapper input:focus + label::before {
@@ -191,10 +189,10 @@ a:active {
   background-color: transparent;
 }
 
-.botao-del {
+.botao-mod {
   background-color: #04d361;
 }
 
-.botao-del a {
+.botao-mod a {
   color: #ffffff;
 }
